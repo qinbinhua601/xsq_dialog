@@ -7,7 +7,7 @@
  */
 
 
-
+//qinbinhua
 /**
  * [checkLibs description]
  *  pre check the libs required
