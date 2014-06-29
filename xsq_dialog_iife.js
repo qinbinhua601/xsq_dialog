@@ -7,7 +7,6 @@
  */
 
 
-//qinbinhua
 /**
  * [checkLibs description]
  *  pre check the libs required
@@ -284,9 +283,37 @@ var xsq_dialog	=(function($){
 		$.Tipmsg.tit =  "西十区提示";
 		$.Showmsg(content);
 	};
+
+	/**
+	 * [getOptions description]
+	 * mode = 0		=>	"login_register"
+	 * @return [object] _options["login_register"] [description] 
+	 * mode = 1     =>	"normal"                        
+	 * @return [object] _options["normal"] [description]
+	 * 
+	 * e.g. 	xsq_dialog.get_options(mode) | mode =1 | mode =0 |mode not specified == mode =0
+	 */
+	var get_options = function(){
+		//default mode is 0 => login_register dialog
+		var mode = 0;
+		if(arguments.length){
+			mode = (typeof(arguments[0])==='number') ? arguments[0]: parseInt(arguments[0]);
+		}
+		switch(mode){
+			case 0:
+				return _options["login_register"];
+				break;
+			case 1:
+				return _options["normal"];
+				break;
+			default:
+				break;
+		}
+	};
 	return {		
 		init : init,
-		msg_box : xsq_msg_box
+		msg_box : xsq_msg_box,
+		get_options : get_options
 		// _options : _options,
 		// _xsq_login_register : _xsq_login_register,
 		// _xsq_normal : _xsq_normal
