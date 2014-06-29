@@ -3,7 +3,8 @@
  * Usage  : to init different styled dialog box [0] login/register [1] normal message box 
  * Date   : 2014-4-22 
  * Hint   : jQuery.js is required
- * 
+ * Update : 2014-6-29
+ *
  */
 
 
@@ -310,6 +311,7 @@ var xsq_dialog	=(function($){
 				break;
 		}
 	};
+
 	return {		
 		init : init,
 		msg_box : xsq_msg_box,
